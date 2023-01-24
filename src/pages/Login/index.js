@@ -19,40 +19,41 @@ function Login() {
   return (
     <Container>
       <Titulo>
-              Insira o seu nome
-            </Titulo>
-            <InputContainer>
-              <InputLabel>
-                Nome
-              </InputLabel>
-              <Input
-                value={nome}
-                onChange={(event) => setNome(event.target.value)}
-                type="text"
-              />
-            </InputContainer>
-            <InputContainer>
-              <InputLabel>
-                Saldo
-              </InputLabel>
-              <Input
-                value={saldo}
-                onChange={(event) => setSaldo(event.target.value)}
-                type="number"
-                startAdornment={
-                  <InputAdornment position="start">
-                    R$
-                  </InputAdornment>
-                }
-              />
-            </InputContainer>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => history.push('/feira')}
-            >
-              Avançar
-            </Button>
+        Insira o seu nome
+      </Titulo>
+      <InputContainer>
+        <InputLabel>
+          Nome
+        </InputLabel>
+        <Input
+          value={nome}
+          onChange={(event) => setNome(event.target.value)}
+          type="text"
+        />
+      </InputContainer>
+      <InputContainer>
+        <InputLabel>
+          Saldo
+        </InputLabel>
+        <Input
+          value={saldo}
+          onChange={(event) => setSaldo(event.target.value)}
+          type="number"
+          startAdornment={
+            <InputAdornment position="start">
+              R$
+            </InputAdornment>
+          }
+        />
+      </InputContainer>
+      <Button
+        variant="contained"
+        color="primary"
+        disabled={nome.length < 4}
+        onClick={() => history.push('/feira')}
+      >
+        Avançar
+      </Button>
     </Container>
   )
 };
