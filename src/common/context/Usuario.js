@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { createContext } from 'react'
+import { useState, createContext } from 'react'
 
 export const UsuarioContext = createContext()
+UsuarioContext.displayName = "Usuário"
 
 export const UsuarioProvider = ({ children }) => {
   const [nome, setNome] = useState("")
